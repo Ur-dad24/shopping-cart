@@ -19,8 +19,8 @@ const ProductCard = (props) => {
           <Form as={Row}>
              <Form.Label column='true' sm='6'>In cart: {productQuantity}</Form.Label>
              <Col sm='6'>
-              <Button sm='6' className="mx-2" onClick={() => cart.addOneToCart(product.id)}>+</Button>
               <Button sm='6' className="mx-2" onClick={() => cart.removeOneFromCart(product.id)}>-</Button>
+              <Button sm='6' className="mx-2" onClick={() => cart.addOneToCart(product.id)}>+</Button>
              </Col>
           </Form>
           <Button className="my-2" variant='danger' onClick={() => cart.deleteFromCart(product.id)}>Remove from Cart</Button>
