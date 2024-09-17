@@ -1,6 +1,7 @@
 import { Button, Modal, Navbar } from "react-bootstrap"
 import { useState, useContext } from "react"
 import { CartContext } from "../CartContext"
+import CartProduct from "./CartProduct"
 
 
 const NavbarComponent = () => {
@@ -32,8 +33,8 @@ const NavbarComponent = () => {
         productsCount > 0?
         <>
             <p>Items in your cart:</p>
-            {cart.items.map((currentProduct, index) => (
-              <h1>{currentProduct.id}</h1>   
+            {cart.items.map((currentProduct) => (
+             <CartProduct key={currentProduct.id} id={currentProduct.id} quantity={currentProduct.quantity} />   
             ) )}
             <h1>Total: ${cart.getTotalCost().toFixed(2)}</h1>
             <Button variant='success'>CHECKOUT</Button>
