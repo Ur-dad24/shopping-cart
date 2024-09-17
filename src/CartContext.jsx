@@ -15,7 +15,7 @@ function CartProvider({ children }) {
 
   function getProductQuantity(id) {
     const quantity = cartProducts.find(
-      (product) => (product.id = id)
+      (product) => (product.id === id)
     )?.quantity;
 
     if (quantity === undefined) {
@@ -71,15 +71,16 @@ function CartProvider({ children }) {
   function deleteFromCart(id) {
     //Using filter method to return a new array of objects whose id does not match the passed id
     setCartProducts((cartProducts) => {
-        cartProducts.filter((currentProduct) =>{
-            return currentProduct.id != id
-        } )
+       return cartProducts.filter((currentProduct) => currentProduct.id !== id)   
     });
   }
 
+  
+
+
   function getTotalCost(){
     let totalCost = 0;
-    cartProducts.map((cartItem) => {
+    cartProducts.forEach((cartItem) => {
         const productData = getProductData(cartItem.id);
         totalCost += (productData.price * cartItem.quantity);
     })
