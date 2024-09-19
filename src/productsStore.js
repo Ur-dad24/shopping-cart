@@ -1,8 +1,8 @@
 const products = [
     {
-        id: 'price_1Q03cXP3NQclC9uBvw8tWUZp',
+        id: 'price_1Q0efbP3NQclC9uBV1o5zTBl',
         name: 'Coffee',
-        price: 4.99
+        price: 20.99
     },
     {
         id: 'price_1Q03gIP3NQclC9uBTcXtJl07',
