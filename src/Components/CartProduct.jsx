@@ -13,7 +13,7 @@ const CartProduct = (props) => {
     <>
     <h3>{productData.name}</h3>
     <p>{quantity} total</p>
-    <p>${(quantity * productData.price).toFixed(2)}</p>
+    <p>ZMK{(quantity * productData.price).toFixed(2)}</p>
     <Button size='sm' onClick={() => cart.deleteFromCart(id)}>Remove</Button>
     <hr />
     </>

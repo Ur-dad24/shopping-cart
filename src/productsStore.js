@@ -1,18 +1,18 @@
 const products = [
     {
-        id: 1,
-        name: 'Product 1',
-        price: 100
+        id: 'price_1Q03cXP3NQclC9uBvw8tWUZp',
+        name: 'Coffee',
+        price: 4.99
     },
     {
-        id: 2,
-        name: 'Product 2',
-        price: 200
+        id: 'price_1Q03gIP3NQclC9uBTcXtJl07',
+        name: 'Sunglasses',
+        price: 19.99
     },
     {
-        id: 3,
-        name: 'Product 3',
-        price: 300
+        id: 'price_1Q03n4P3NQclC9uBYeOTZ47c',
+        name: 'Camera',
+        price: 9999.99
     }
 ]
 

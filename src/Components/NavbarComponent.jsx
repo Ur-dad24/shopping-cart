@@ -11,6 +11,24 @@ const NavbarComponent = () => {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
+  const checkout = async () => {
+    console.log(cart.items);
+    const url = 'http://localhost:5000/checkout'
+    await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({items: cart.items})
+    })
+    .then(response => response.json())
+    .then(response => {
+      if(response.url){
+        window.location.assign(response.url) //Forwarding user to stripe
+      }
+    })
+  }
+
   const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
   return (
 <>
@@ -36,8 +54,8 @@ const NavbarComponent = () => {
             {cart.items.map((currentProduct) => (
              <CartProduct key={currentProduct.id} id={currentProduct.id} quantity={currentProduct.quantity} />   
             ) )}
-            <h1>Total: ${cart.getTotalCost().toFixed(2)}</h1>
-            <Button variant='success'>CHECKOUT</Button>
+            <h1>Total: ZMK {cart.getTotalCost().toFixed(2)}</h1>
+            <Button variant='success' onClick={checkout}>CHECKOUT</Button>
         </>
         :
         <h1>There are no products in your cart!</h1>
